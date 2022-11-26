@@ -8,6 +8,9 @@ import getCookie from '../functions/getCookie';
 export default function Quiz() {
 	axios.defaults.xsrfCookieName = 'csrftoken'
 	axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
+import { Button } from '@mui/material';
+
+export default function Quiz() {
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
@@ -58,7 +61,7 @@ export default function Quiz() {
 						</div>
 						<div className='answer-section'>
 							{questions[currentQuestion].answers.map((answerOption) => (
-								<button onClick={() => handleAnswerOptionClick(answerOption, questions[currentQuestion].id)}>{answerOption}</button>
+								<Button sx={{elevation : 20}} className='button-answer' variant="contained" onClick={() => handleAnswerOptionClick(answerOption, questions[currentQuestion].id)}>{answerOption}</Button>
 							))}
 						</div>
 					</>
