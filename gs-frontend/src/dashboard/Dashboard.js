@@ -30,7 +30,7 @@ function Copyright(props) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        The Goldman Hour
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -176,7 +176,7 @@ function DashboardContent() {
                   alignItems: 'center'
                 }}>
                   <a>YOUR POINTS:</a>
-                  <a className="a_points">{50}</a>
+                  <a className="a_points">{350}</a>
                 </Paper>
               </Grid>
               <Grid item xs={4} md={4} lg={4}>
