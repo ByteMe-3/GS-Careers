@@ -8,6 +8,7 @@ export default function Quiz() {
 	const [score, setScore] = useState(0);
 	const [questions, setQuestions] = useState();
 	const [chosenAnswers, ChosenAnswers] = useState([]);
+	const [showMessage, setMessage] = useState();
 	const handleAnswerOptionClick = (param, que) => {
 		ChosenAnswers((prevArray) => [...prevArray, {'answer': param, 'id': que}])
 		const nextQuestion = currentQuestion + 1;
@@ -31,7 +32,7 @@ export default function Quiz() {
 	  useEffect(() => {
 		if(showScore)
 		{
-			axios.post('api/quiz/', chosenAnswers)
+			axios.post('api/quiz/', chosenAnswers).then(res => setMessage(res.data))
 		}
 	  }, [chosenAnswers, showScore]);
 
@@ -42,7 +43,7 @@ export default function Quiz() {
 			<div className='app'>
 				{showScore ? (
 					<div className='score-section'>
-						You scored {score} out of {questions.length}
+						{showMessage}
 					</div>
 				) : (
 					<>
