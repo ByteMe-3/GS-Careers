@@ -22,6 +22,8 @@ import Chart from './Chart';
 import Deposits from './Deposits';
 import RecentTasks from './Tasks';
 import CalendarGS from './Calendar'
+import './dashboard.css'
+import Quiz from '../components/quiz';
 
 function Copyright(props) {
   return (
@@ -161,28 +163,93 @@ function DashboardContent() {
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
-              {/* Recent Orders */}
-              <Grid item xs={8}>
+              
+            <Grid item xs={12}>
                 <Paper sx={{ 
                   p: 2, 
                   display: 'flex', 
                   flexDirection: 'column',
-                  height: 350
+                  height: 'auto',
+                  width: '20%',
+                  marginLeft: 'auto',
+                  marginRight: 'auto',
+                  alignItems: 'center'
                 }}>
-                  <RecentTasks />
+                  <a>YOUR POINTS:</a>
+                  <a className="a_points">{50}</a>
                 </Paper>
               </Grid>
-              {/* Calendar */}
               <Grid item xs={4} md={4} lg={4}>
                 <Paper
                   sx={{
                     p: 2,
                     display: 'flex',
                     flexDirection: 'column',
-                    height: 350,
+                    height: 'auto',
+                    alignItems: 'center'
+                  }}
+                >
+                  SHARE
+                </Paper>
+              </Grid>
+              <Grid item xs={4} md={4} lg={4}>
+                <Paper
+                  sx={{
+                    p: 2,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: 'auto',
+                    alignItems: 'center'
+                  }}
+                >
+                  QUIZES
+                </Paper>
+              </Grid>
+              <Grid item xs={4} md={4} lg={4}>
+                <Paper
+                  sx={{
+                    p: 2,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: 'auto',
+                    alignItems: 'center'
+                  }}
+                >
+                  APPLY YOUR CV
+                </Paper>
+              </Grid>
+              {/* Calendar */}
+               <Grid item xs={4} md={4} lg={4}>
+                <Paper
+                  sx={{
+                    p: 2,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: 'auto',
                   }}
                 >
                   <CalendarGS />
+                </Paper>
+              </Grid>
+              {/* Recent Orders */}
+              <Grid item xs={8}>
+                <Paper sx={{ 
+                  p: 2, 
+                  display: 'flex', 
+                  flexDirection: 'column',
+                  height: 'auto',
+                }}>
+                  <RecentTasks />
+                </Paper>
+              </Grid>
+              <Grid item xs={8}>
+                <Paper sx={{ 
+                  p: 2, 
+                  display: 'flex', 
+                  flexDirection: 'column',
+                  height: 'auto',
+                }}>
+                  <Quiz />
                 </Paper>
               </Grid>
             </Grid>
