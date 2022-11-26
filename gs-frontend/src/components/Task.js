@@ -24,7 +24,8 @@ export default function Task(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
+        {props.type == "action" && <Button size="small">Share</Button>}
+        {props.type == "quiz" && <Button size="small">Take quiz</Button>}
         <Button size="small">Learn More</Button>
       </CardActions>
     </Card>

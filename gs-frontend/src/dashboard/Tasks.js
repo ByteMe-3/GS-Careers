@@ -75,15 +75,15 @@ export default function RecentTasks() {
           <TableRow>
             <TableCell>Date</TableCell>
             <TableCell>Operation</TableCell>
-            <TableCell align="right">Sale Amount</TableCell>
+            <TableCell align="right">Amount</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {tasks !== undefined && tasks.map((row) => (
             <TableRow key={row.id}>
-              <TableCell>{row.date}</TableCell>
-              <TableCell>{row.name}</TableCell>
-              <TableCell align="right">{`${row.amount} points`}</TableCell>
+              <TableCell>{row.category}</TableCell>
+              <TableCell>{row.title}</TableCell>
+              <TableCell align="right">{`${row.reward} points`}</TableCell>
             </TableRow>
           ))}
         </TableBody>

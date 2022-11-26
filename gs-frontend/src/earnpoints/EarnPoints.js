@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
@@ -19,6 +19,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems } from '../components/listItems'
 import Task from '../components/Task';
+import axios from 'axios';
 
 function Copyright(props) {
   return (
@@ -35,7 +36,7 @@ function Copyright(props) {
 
 const drawerWidth = 240;
 
-const tasks = [
+const tasksa = [
     {
         title: 'task 1',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
@@ -105,6 +106,15 @@ function EarnPointscontent() {
   const toggleDrawer = () => {
     setOpen(!open);
   };
+  const [tasks, setTasks] = React.useState([])
+
+  const fetchData = () => {
+    axios.get('api/task/list/').then(res => setTasks(res.data));
+  }
+
+  useEffect(() => {
+    fetchData()
+  }, []);
 
   return (
     <ThemeProvider theme={mdTheme}>
@@ -177,12 +187,14 @@ function EarnPointscontent() {
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
-                {tasks.map((task) => {
+                {tasks !== undefined && tasks.map((task) => {
                     return(
-                        <Grid item xs={4}>
-                            <Task 
+                        <Grid key={task.id} item xs={4}>
+                            <Task
+                                key={task.id}
                                 title={task.title}
                                 description={task.description}
+                                type={task.type}
                             />
                         </Grid>
                     )
