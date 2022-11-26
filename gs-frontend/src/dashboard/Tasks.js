@@ -60,7 +60,7 @@ export default function RecentTasks() {
   const [tasks, setTasks] = useState([])
 
   const fetchData = () => {
-    axios.get('task/').then(res => setTasks(res.data));
+    axios.get('api/task/list/').then(res => setTasks(res.data));
   }
 
   useEffect(() => {
