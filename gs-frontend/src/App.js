@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Dashboard from './dashboard/Dashboard';
 import EarnPoints from './earnpoints/EarnPoints';
@@ -16,12 +15,6 @@ function App() {
           <Route path='/events' element={<Events/>}></Route>
           <Route path='/quiz' element={<Quiz/>}></Route>
           <Route path='/profile' element={<Profile/>}></Route>
-          {/* <Route path='/task/:id' element={<div><HomePage/></div>}></Route> */}
-          {/*
-          
-          <Route path='/profile' element={<div><LoginPage/></div>}></Route>
-          <Route path='/backlog' element={<div><LoginPage/></div>}></Route>
-          <Route path='/profile/:id' element={<div><ProfilePage/></div>}></Route> */}
       </Routes>
     </HashRouter>
   );
