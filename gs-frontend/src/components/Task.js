@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import bg from '../assets/task_bg.jpg'
 export default function Task(props) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, height: 300 }}>
       <CardMedia
         component="img"
         alt="green iguana"

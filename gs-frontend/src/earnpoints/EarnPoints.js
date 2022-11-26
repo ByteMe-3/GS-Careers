@@ -185,7 +185,7 @@ function EarnPointscontent() {
           }}
         >
           <Toolbar />
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+          <Container maxWidth="lg" sx={{ mt: 12, mb: 12 }}>
             <Grid container spacing={3}>
                 {tasks !== undefined && tasks.map((task) => {
                     return(

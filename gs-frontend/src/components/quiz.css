@@ -16,9 +16,15 @@
     align-items: center;
   }
   
+
+  .app {
+    margin: auto;
+    margin-top: 10%;
+  }
+
   /* QUESTION/TIMER/LEFT SECTION */
   .question-section {
-    width: 100%;
+    width: 2rem;
     position: relative;
   }
   
