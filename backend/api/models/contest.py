@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.db import models
+
 from .category import Category
 from .task import Task
 

@@ -1,10 +1,18 @@
 from .category import Category
-from .user import UserProfile
-from .contest import Contest
-from .task import Task
-from .referral import Referral
 from .config import Config
-from .task import Task
+from .contest import Contest
 from .question import Question
+from .referral import Referral
+from .task import Task
+from .user import UserProfile
 
-__all__ = ["Category", "UserProfile", "Contest", "Task", "Referral", "Config", "Task", "Question"]
+__all__ = [
+    "Category",
+    "UserProfile",
+    "Contest",
+    "Task",
+    "Referral",
+    "Config",
+    "Task",
+    "Question",
+]

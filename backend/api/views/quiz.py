@@ -1,9 +1,10 @@
-from rest_framework.response import Response
-from rest_framework.generics import ListAPIView
-
-from ..serializers import QuestionSerializer
-from ..models import Question
 import json
+
+from rest_framework.generics import ListAPIView
+from rest_framework.response import Response
+
+from ..models import Question
+from ..serializers import QuestionSerializer
 
 
 class QuizView(ListAPIView):
@@ -14,7 +15,7 @@ class QuizView(ListAPIView):
         points = 0
         data = request.data
         for question in data:
-            question_instance = self.queryset.get(id=question.get("id") )
+            question_instance = self.queryset.get(id=question.get("id"))
             for i, answer in enumerate(question_instance.answers):
                 if answer == question.get("answer"):
                     points += question_instance.rewards[i]
@@ -31,6 +32,3 @@ class QuizView(ListAPIView):
         else:
             result = "Machine Learning"
         return Response(result)
-
-
-

@@ -4,18 +4,19 @@ from django.shortcuts import redirect
 from rest_framework.generics import CreateAPIView
 from rest_framework.response import Response
 
-from ..serializers import UserSerializer
-from ..models import UserProfile
 from ..email.email import send_activation_email, send_event_email, send_points_email
+from ..models import UserProfile
+from ..serializers import UserSerializer
+
 
 class RegisterView(CreateAPIView):
     serializer_class = UserSerializer
     queryset = User.objects.all()
 
     def create(self, request, *args, **kwargs):
-        #send_activation_email()
-        #send_event_email()
-        #send_points_email()
+        # send_activation_email()
+        # send_event_email()
+        # send_points_email()
 
         serializer = self.serializer_class
         serializer = serializer(data=request.data)

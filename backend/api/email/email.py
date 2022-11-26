@@ -1,7 +1,8 @@
+import os
+from email.mime.image import MIMEImage
+
 from django.conf import settings
 from django.core.mail import EmailMultiAlternatives
-from email.mime.image import MIMEImage
-import os
 
 path = os.path.join(settings.BASE_DIR, "api", "email/")
 
@@ -9,10 +10,10 @@ path = os.path.join(settings.BASE_DIR, "api", "email/")
 def attach_image(message, file_name):
     image_path = os.path.join(path, "images/")
     background_path = image_path + file_name
-    attachment = open(background_path, 'rb')
+    attachment = open(background_path, "rb")
 
     image = MIMEImage(attachment.read())
-    image.add_header('Content-ID', '<{}>'.format(file_name))
+    image.add_header("Content-ID", "<{}>".format(file_name))
     message.attach(image)
 
 
@@ -23,7 +24,7 @@ def send_points_email():
         from_email=settings.DEFAULT_FROM_EMAIL,
         to=["himok.pk@gmail.com"],
     )
-    message.mixed_subtype = 'related'
+    message.mixed_subtype = "related"
 
     with open(path + "points.html") as f:
         body_html = f.read()
@@ -51,7 +52,7 @@ def send_event_email():
         from_email=settings.DEFAULT_FROM_EMAIL,
         to=["himok.pk@gmail.com"],
     )
-    message.mixed_subtype = 'related'
+    message.mixed_subtype = "related"
 
     with open(path + "event-mail.html") as f:
         body_html = f.read()
@@ -79,7 +80,7 @@ def send_activation_email():
         from_email=settings.DEFAULT_FROM_EMAIL,
         to=["himok.pk@gmail.com"],
     )
-    message.mixed_subtype = 'related'
+    message.mixed_subtype = "related"
 
     with open(path + "activation.html") as f:
         body_html = f.read()
@@ -93,7 +94,3 @@ def send_activation_email():
     attach_image(message, "footer_ico_youtube.jpg")
 
     message.send(fail_silently=False)
-
-
-
-

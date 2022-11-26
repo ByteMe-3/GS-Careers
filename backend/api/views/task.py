@@ -1,7 +1,7 @@
-from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView
+from rest_framework.generics import CreateAPIView, ListAPIView, RetrieveAPIView
 
-from ..serializers import TaskSerializer
 from ..models import Task
+from ..serializers import TaskSerializer
 
 
 class TaskListView(ListAPIView):

@@ -20,9 +20,7 @@ export default function Quiz() {
 		if (nextQuestion < questions.length) {
 			setCurrentQuestion(nextQuestion);
 		} else {
-			
 			setShowScore(true);
-
 		}
 	};
 

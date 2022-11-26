@@ -1,6 +1,14 @@
 from django.urls import path
 
-from .views import LoginView, RegisterView, UserProfileView, TaskListView, TaskCreateView, TaskRetrieveView, QuizView
+from .views import (
+    LoginView,
+    QuizView,
+    RegisterView,
+    TaskCreateView,
+    TaskListView,
+    TaskRetrieveView,
+    UserProfileView,
+)
 
 urlpatterns = [
     path("login/", LoginView.as_view()),
