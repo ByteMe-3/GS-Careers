@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './quiz.css'
 import axios from 'axios';
-export default function Quiz() {
+import getCookie from '../functions/getCookie';
 
+
+
+export default function Quiz() {
+	axios.defaults.xsrfCookieName = 'csrftoken'
+	axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
