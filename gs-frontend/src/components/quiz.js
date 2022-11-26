@@ -14,7 +14,7 @@ export default function Quiz() {
 		if (nextQuestion < questions.length) {
 			setCurrentQuestion(nextQuestion);
 		} else {
-			axios.post('api/post/', chosenAnswers)
+			
 			setShowScore(true);
 
 		}
@@ -29,8 +29,11 @@ export default function Quiz() {
 	  }, []);
 	
 	  useEffect(() => {
-		console.log(chosenAnswers)
-	  }, [chosenAnswers]);
+		if(showScore)
+		{
+			axios.post('api/quiz/', chosenAnswers)
+		}
+	  }, [chosenAnswers, showScore]);
 
 	  if(questions !== undefined)
 	  {
