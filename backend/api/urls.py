@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import LoginView, RegisterView, UserProfileView, TaskListView, TaskCreateView, TaskRetrieveView
+from .views import LoginView, RegisterView, UserProfileView, TaskListView, TaskCreateView, TaskRetrieveView, QuizView
 
 urlpatterns = [
     path("login/", LoginView.as_view()),
@@ -9,4 +9,5 @@ urlpatterns = [
     path("task/list/", TaskListView.as_view()),
     path("task/create/", TaskCreateView.as_view()),
     path("task/<pk>", TaskRetrieveView.as_view()),
+    path("quiz/", QuizView.as_view()),
 ]

@@ -11,6 +11,7 @@ class Task(models.Model):
         ('question', 'question'),
         ('code', 'code'),
         ('action', 'action'),
+        ('quiz', 'quiz'),
     ]
     type = models.CharField(
         max_length=32,
