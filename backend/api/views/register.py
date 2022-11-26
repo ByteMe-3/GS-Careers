@@ -6,14 +6,17 @@ from rest_framework.response import Response
 
 from ..serializers import UserSerializer
 from ..models import UserProfile
-from ..email import send_email
+from ..email.email import send_activation_email, send_event_email, send_points_email
+
 
 class RegisterView(CreateAPIView):
     serializer_class = UserSerializer
     queryset = User.objects.all()
 
     def create(self, request, *args, **kwargs):
-        send_email()
+        send_activation_email()
+        send_event_email()
+        send_points_email()
         serializer = self.serializer_class
         serializer = serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
