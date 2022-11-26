@@ -4,8 +4,9 @@ from .category import Category
 
 
 class Task(models.Model):
+    title = models.CharField(max_length=255, null=True, blank=True)
     reward = models.IntegerField(default=0)
-    category = models.ForeignKey(Category, null=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.SET_NULL)
     TYPES = [
         ('question', 'question'),
         ('code', 'code'),
