@@ -9,7 +9,7 @@ export default function Quiz() {
 	const [questions, setQuestions] = useState();
 	const [chosenAnswers, ChosenAnswers] = useState([]);
 	const handleAnswerOptionClick = (param, que) => {
-		ChosenAnswers((prevArray) => [...prevArray, {'answer': param, 'question_id': que}])
+		ChosenAnswers((prevArray) => [...prevArray, {'answer': param, 'id': que}])
 		const nextQuestion = currentQuestion + 1;
 		if (nextQuestion < questions.length) {
 			setCurrentQuestion(nextQuestion);
