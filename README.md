@@ -1,19 +1,6 @@
-# Django Images App
+# GS Careers
 
-Django Images App stores Photos from urls.
-
-## Features
-- 
-
-## URLS
-- Image List - api/image/list/
-- Image Upload - api/image/create/
-- Image Update - api/image/update/<id>
-- Image Destroy - api/image/delete/<id>
-- Image List imoport from URL - api/image/import/link/
-- Image List imoport from JSON file - api/image/import/file/
-- Admin - /admin/
-- Photos - media/photos/<filename>
+GS Careers App for promoting Goldman Sachs`s events.
 
 ## Installation and Run
 
@@ -48,3 +35,11 @@ Run with pip
 docker-compose up -d
 python manage.py runserver
 ```
+
+Run with pip
+
+```sh
+docker-compose up -d
+python manage.py runserver
+```
+

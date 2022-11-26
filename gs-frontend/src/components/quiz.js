@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './quiz.css'
 import axios from 'axios';
-import getCookie from '../functions/getCookie';
-
-
 
 export default function Quiz() {
 	axios.defaults.xsrfCookieName = 'csrftoken'
