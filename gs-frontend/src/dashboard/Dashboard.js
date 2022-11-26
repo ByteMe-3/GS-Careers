@@ -193,6 +193,7 @@ function DashboardContent() {
                 </Paper>
               </Grid>
               <Grid item xs={4} md={4} lg={4}>
+                <a href="/#/quiz">
                 <Paper
                   sx={{
                     p: 2,
@@ -204,6 +205,7 @@ function DashboardContent() {
                 >
                   QUIZES
                 </Paper>
+                </a>
               </Grid>
               <Grid item xs={4} md={4} lg={4}>
                 <Paper
@@ -240,16 +242,6 @@ function DashboardContent() {
                   height: 'auto',
                 }}>
                   <RecentTasks />
-                </Paper>
-              </Grid>
-              <Grid item xs={8}>
-                <Paper sx={{ 
-                  p: 2, 
-                  display: 'flex', 
-                  flexDirection: 'column',
-                  height: 'auto',
-                }}>
-                  <Quiz />
                 </Paper>
               </Grid>
             </Grid>

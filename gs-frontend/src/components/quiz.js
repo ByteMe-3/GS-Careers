@@ -31,7 +31,7 @@ export default function Quiz() {
 	  useEffect(() => {
 		if(showScore)
 		{
-			axios.post('api/quiz/', chosenAnswers)
+			axios.post('api/quiz/', chosenAnswers).then(res => console.log(res))
 		}
 	  }, [chosenAnswers, showScore]);
 
@@ -54,7 +54,7 @@ export default function Quiz() {
 						</div>
 						<div className='answer-section'>
 							{questions[currentQuestion].answers.map((answerOption) => (
-								<button onClick={() => handleAnswerOptionClick(answerOption, questions[currentQuestion].id)}>{answerOption}</button>
+								<button className='button-answer' onClick={() => handleAnswerOptionClick(answerOption, questions[currentQuestion].id)}>{answerOption}</button>
 							))}
 						</div>
 					</>
